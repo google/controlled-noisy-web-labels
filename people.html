@@ -1,0 +1,81 @@
+<!--
+Copyright 2020 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="ga.js"></script>
+<title>Controlled Noisy Web Labels</title>
+<!-- Top  -->
+<div class="top">
+  <table>
+    <tr>
+      <td class="top-left">
+      <span class="top-8m-text">Controlled Noisy Web Labels &nbsp;</span>
+      </td>
+      <td class="top-right">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="people.html">Team</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="contents">
+  <div class="page">
+    <h2>People</h2>
+    <div class="pc">
+      The people who brought you this dataset:
+      <table>
+        <tr>
+          <td id="authors"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- contents -->
+<div class="tos">
+  <table>
+    <tr>
+      <td>
+        <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_dark_color_42x16dp.png" alt="Google">
+      </td>
+      <td class="tos-right">
+        <a href="https://www.google.com/">Google</a>
+        <a href="https://www.google.com/intl/en/about/">About Google</a>
+        <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+        <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+        <a href="https://groups.google.com/forum/#!forum/cartoonset-users">Feedback</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<script>
+  var authors = [
+    {name: 'Lu Jiang', img: 'people/lujiang.png'},
+    {name: 'Di Huang', img: 'people/dihuang.png'},
+    {name: 'Mason Liu', img: 'people/masonliuw.png'},
+    {name: 'Weilong Yang', img: 'people/weilongyang.png'},
+  ];
+
+  for (var i = 0; i < authors.length; i += 1) {
+    var a = authors[i];
+    var img = $('<img>').attr('src', a.img);
+    $('<div class="author">').append($('<div class="img">').append(img)).append(
+        $('<div class="name">').html(a.name)).appendTo($('#authors'));
+  }
+</script>

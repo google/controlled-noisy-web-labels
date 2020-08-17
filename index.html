@@ -1,0 +1,167 @@
+<!--
+Copyright 2020 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="ga.js"></script>
+<title>Controlled Noisy Web Labels</title>
+<!-- Top  -->
+<div class="top">
+  <table>
+    <tr>
+      <td class="top-left">
+        <span class="top-8m-text">Controlled Noisy Web Labels &nbsp;</span>
+      </td>
+      <td class="top-right">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="people.html">Team</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="contents">
+  <div class="alt-page">
+    <div class="pc">
+      <p>
+        <h1>Dataset Description</h1>
+        Controlled Noisy Web Labels is a collection of ~<b>212,000</b> URLs to images in which every image is
+        carefully annotated by 3-5 labeling professionals by
+        <a class="ref" href="https://cloud.google.com/ai-platform/data-labeling/docs" target="_blank">
+        Google Cloud Data Labeling Service</a>.
+        Using these annotations, we establish the first benchmark of controlled real-world label noise from the web.
+        <ul>
+          <li>Blue Mini-ImageNet (synthetic noise)</li>
+          <li>Red Mini-ImageNet (real-world web noise)</li>
+          <li>Blue Stanford Cars (symmetric noise)</li>
+          <li>Red Stanford Cars (real-world web noise)</li>
+        </ul>
+
+        <a class="ref" href="https://github.com/yaoyao-liu/mini-imagenet-tools" target="_blank">
+          The Mini-ImageNet dataset
+        </a> is for coarse classification and
+        <a class="ref" href="https://ai.stanford.edu/~jkrause/cars/car_dataset.html" target="_blank">
+          the Stanford Cars dataset
+        </a> is for fine-grained classification.
+        <br>
+        Each of the training sets above contains one of the ten noise-levels p from 0% to 80%.
+        <br>
+        The validation set has clean labels and is shared across all noisy training sets.
+        <br>
+        The details for dataset construction and analysis can be found in 
+        <a class="ref" href="https://arxiv.org/abs/1911.09781" target="_blank">our paper</a>
+        published in ICML 2020. 
+
+        <h1>Examples</h1>
+        <h3> Mini-ImageNet: triceratops </h3>
+        <table>
+          <tr>
+            <td>
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41ILgyPd1gL.jpg" alt="triceratops1" width="200" height="200">
+            </td>
+            <td>
+              <img src="https://ae01.alicdn.com/kf/HTB17ewQxTtYBeNjy1Xdq6xXyVXa9/Oenux-3pcs-set-Jurassic-Dinosaur-Corpse-Dinosaur-Body-Model-Action-Figure-Stegosaurus-Triceratops-Educational-Toys-For.jpg" alt="triceratops2" width="200" height="200">
+            </td>
+            <td>
+              <img src="http://www.stats-attitude.fr/bmz_cache/7/Pawaca%20Jouet%20Dinosaure%20TriceratopsTyrannosaure%20RexBrachiosaure%20%20Dinosaure%20Enfant%20Jouet%20Reacutealiste%20avec%20Son%20%20Dinosaure%20Educatif%20Jouets%20pour%20Garcon%20Fille%20-%20B07MGXWZMZ_500x500.jpg" alt="triceratops3" width="200" height="200">
+            </td>
+          </tr>
+          <tr>
+            <td> Clean("image/class/label/is_clean": 1) </td>
+            <td> Clean("image/class/label/is_clean": 1) </td>
+            <td> Not Clean("image/class/label/is_clean": 0) </td>
+          </tr>
+        </table>
+        <h3> Stanford Cars: AM General Hummer SUV 2000</h3>
+        <table>
+          <tr>
+            <td>
+              <img src="https://i.ytimg.com/vi/xeD7wURSOUk/maxresdefault.jpg" alt="car1" width="200" height="200">
+            </td>
+            <td>
+              <img src="http://media1.s-nbcnews.com/j/msnbc/Components/Photos/060512/060512_hummerH1_hmed_12p.grid-6x2.jpg" alt="triceratops2" width="200" height="200">
+            </td>
+            <td>
+              <img src="https://media-dmg.assets-cdk.com/websites/content/gmps-munday/generic/c27df90d7fe6464bb7337c55d4aa538d_c0x0-1600x686.jpg" alt="car3" width="200" height="200">
+            </td>
+          </tr>
+          <tr>
+            <td> Clean("image/class/label/is_clean": 1) </td>
+            <td> Clean("image/class/label/is_clean": 1) </td>
+            <td> Not Clean("image/class/label/is_clean": 0) </td>
+          </tr>
+        </table>
+        <h1>License</h1>
+        The annotations are licensed by Google  under
+        <a class="ref" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+          CC BY 4.0 license.
+        </a>
+          The images we use are under
+        <a class="ref" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">
+          CC BY 2.0 license.
+        </a>
+        Note: while we tried to identify images that are licensed under a Creative Commons Attribution license, we make
+        no representations or warranties regarding the license status of each image and you should verify the license
+        for each image yourself.
+
+
+      <h1> Reference </h1>
+      If you use this dataset, please cite the following paper:
+      <p>
+        <a class="ref" href="https://arxiv.org/abs/1911.09781" target="_blank">
+          Beyond Synthetic Noise: Deep Learning on Controlled Noisy Labels.
+        </a>
+        <br>
+      </p>
+
+      <div class="centered">
+        <div id="red-triangle-up"></div>
+        <div id="white-triangle-up"></div>
+        <div id="squares-bubble"></div>
+      </div>
+    </div>
+    <div class="pc centered">
+      Ready to start using this dataset?<br><br>
+      <a href="download.html"><button class="button">Download Dataset</button></a>
+    </div>
+  </div>
+</div>
+<!-- end of contents -->
+<div class="tos">
+  <table>
+    <tr>
+      <td>
+        <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_dark_color_42x16dp.png" alt="Google">
+      </td>
+      <td class="tos-right">
+        <a href="https://www.google.com/">Google</a>
+        <a href="https://www.google.com/intl/en/about/">About Google</a>
+        <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+        <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+        <a href="https://groups.google.com/forum/#!forum/cartoonset-users">Feedback</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<script>
+  $(document).ready(function(){
+    $('.carousel-images').slick();
+  });
+</script>
